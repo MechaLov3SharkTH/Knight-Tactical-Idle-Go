@@ -1,0 +1,17 @@
+{
+  "name": "@knight-tactical/server",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "nodemon --watch src src/server.js",
+    "start": "node src/server.js",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "express": "^5.0.0",
+    "mysql2": "^3.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.0"
+  }
+}
