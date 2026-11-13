@@ -24,7 +24,7 @@ services:
       DB_PASSWORD: ${MYSQL_PASSWORD:?Set MYSQL_PASSWORD in .env}
       DB_NAME: ${MYSQL_DATABASE:-knight_tactical_idle}
     ports:
-      - "3000:3000"
+      - "${API_HOST_PORT:-3001}:3000"
     depends_on:
       db:
         condition: service_healthy

@@ -19,9 +19,9 @@ Foundation for the web-based idle tactical RPG described in the game specificati
    ```
 
 3. Open `http://localhost:5173`. The page shows the API connection status.
-4. Check API liveness at `http://localhost:3000/api/health` and database readiness at `http://localhost:3000/api/health/ready`.
+4. Check API liveness at `http://localhost:3001/api/health` and database readiness at `http://localhost:3001/api/health/ready`.
 
-MySQL is available to the other Compose services but is not published to the host. Its data is kept in the `mysql_data` volume.
+The API is published on host port `3001` by default (`API_HOST_PORT` can override it); inside Compose it still listens on port `3000`. MySQL is available to the other Compose services but is not published to the host. Its data is kept in the `mysql_data` volume.
 
 ## Run services locally
 
@@ -36,7 +36,7 @@ npm run dev:server
 npm run dev:client
 ```
 
-Vite proxies `/api` requests to `http://localhost:3000` by default. To run the API without MySQL, `/api/health` remains available; `/api/health/ready` reports database connectivity.
+Vite proxies `/api` requests to `http://127.0.0.1:3000` by default. To run the API without MySQL, `/api/health` remains available; `/api/health/ready` reports database connectivity.
 
 ## Checks
 
